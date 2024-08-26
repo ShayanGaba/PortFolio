@@ -1,0 +1,690 @@
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+body {
+  background: linear-gradient(to bottom, #141e30, #243b55);
+  color: #f5f5f5;
+  padding: 20px;
+}
+
+@font-face {
+  font-family: "raleway-semi";
+  src: url(Fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "raleway";
+  src: url(Fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+  font-family: "dancing-script";
+  src: url(Fonts/DancingScript-Regular.ttf);
+}
+
+/* navbar work */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+  top: -40px;
+  color: white;
+}
+
+.logo>a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo>a>h1 {
+  font-family: "dancing-script";
+  font-size: 48px;
+  background: linear-gradient(90deg, #00e5ff, #00ff87, #3333ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.7), 0 0 20px rgba(0, 255, 135, 0.7),
+    0 0 30px rgba(51, 51, 255, 0.7);
+  transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.logo>a>h1:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 20px rgba(0, 229, 255, 1), 0 0 30px rgba(0, 255, 135, 1),
+    0 0 40px rgba(51, 51, 255, 1), 0 0 50px rgba(0, 229, 255, 1);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: white;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+  background: #00aaff;
+}
+
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 15px;
+  position: relative;
+  left: -10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.navbar>ul>li>a:hover {
+  color: #00aaff;
+  font-style: italic;
+}
+
+.navbar svg {
+  display: none;
+}
+
+.navbar input {
+  display: none;
+}
+
+.projects-intro {
+  padding: 20px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+  line-height: 25px;
+  position: relative;
+  bottom: 60px;
+}
+.projects-intro p {
+  font-family: 'raleway-semi';
+  font-size: 1rem;
+  margin: 10px 0;
+  background: linear-gradient(to right, rgb(132, 170, 182), rgb(44, 54, 233));
+  background-clip: text;
+  color: transparent;
+}
+
+#projects {
+  padding: 10rem 0;
+  position: relative;
+  bottom: 50px;
+}
+
+#projects .container .section-heading {
+  color: #ffffff;
+  font-size: 32px;
+  text-align: center;
+  position: relative;
+  bottom: 90px;
+  font-family: "raleway";
+  letter-spacing: 0.7px;
+}
+
+
+#projects .container .section-heading::after {
+  content: '';
+  width: 50px;
+  height: 3px;
+  background: #174aa0;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#projects .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 15rem;
+}
+
+#projects .item:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+#projects .item .left {
+  flex: 1;
+}
+
+#projects .item .right {
+  margin-left: -150px;
+  flex: 1;
+  height: 400px;
+  padding: 5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px #00000028;
+  z-index: 2;
+}
+
+#projects .item:nth-of-type(even) .right {
+  margin-left: 0;
+}
+
+#projects .item:nth-of-type(even) .left {
+  margin-left: -150px;
+}
+
+#projects .item .left .img {
+  height: 430px;
+  width: 470px;
+  overflow: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px #4705fc33;
+  position: relative;
+}
+
+#projects .item .left .img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #5a24ed38;
+}
+
+#projects .item .left .img img {
+  object-fit: cover;
+  transition: 0.3s ease transform;
+}
+
+#projects .item:hover .left .img img {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+#projects .item .right .project-title {
+  font-size: 2.2rem;
+  font-family: "raleway";
+  margin-bottom: 1rem;
+  margin-left: 40px;
+  position: relative;
+  top: 10px;
+}
+
+#projects .right>.show {
+  display: none;
+}
+
+#projects .item #three .project-title {
+  position: relative;
+  left: 33px;
+}
+
+#projects .item #three .project-sub-title {
+  position: relative;
+  left: 33px;
+}
+
+#projects .item #three .project-desc {
+  position: relative;
+  left: 33px;
+}
+
+#projects .item .right .project-sub-title {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  margin-left: 40px;
+  font-family: "raleway-semi";
+}
+
+#projects .item .right .project-desc {
+  color: var(--secondary-gray);
+  margin-bottom: 3rem;
+  margin-left: 40px;
+  position: relative;
+  bottom: 5px;
+  font-family: "raleway-semi";
+  line-height: 24.2px;
+}
+
+#projects .item .right .external-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: calc(0.6em - 4px) calc(1.6em - 4px);
+}
+
+#projects .item .right .external-link svg {
+  width: 25px;
+}
+
+#projects .buttons .primary-btn {
+  color: rgb(13, 209, 231);
+  margin-left: 100px;
+  margin-top: -25px;
+  text-decoration: none;
+}
+
+#projects .buttons svg {
+  position: relative;
+  left: -10px;
+}
+
+@media only screen and (min-width: 1024px) {
+  #projects .item #one .project-title {
+    position: relative;
+    top: -40px;
+    left: 30px;
+  }
+
+  #projects .item #one .project-sub-title {
+    position: relative;
+    top: -50px;
+    left: 30px;
+  }
+
+  #projects .item #one .project-desc {
+    position: relative;
+    top: -50px;
+    left: 30px;
+  }
+
+  #projects .item #one .buttons>a {
+    position: relative;
+    top: -60px;
+    left: 80px;
+    font-family: 'raleway-semi';
+  }
+
+  #projects .item #not .img::after {
+    height: 390px;
+  }
+
+  #projects .item #two .project-title {
+    position: relative;
+    top: -50px;
+    left: -20px;
+  }
+
+  #projects .item #two .project-sub-title {
+    position: relative;
+    top: -60px;
+    left: -20px;
+  }
+
+  #projects .item #two .project-desc {
+    position: relative;
+    top: -70px;
+    left: -20px;
+  }
+  #projects .item #two .buttons>a {
+    position: relative;
+    top: -110px;
+    left: -15px;
+    font-family: 'raleway-semi';
+  }
+  #projects .item #three .project-title {
+    position: relative;
+    top: -40px;
+  }
+  #projects .item #three .project-sub-title {
+    position: relative;
+    top: -50px;
+  }
+  #projects .item #three .project-desc {
+    position: relative;
+    top: -60px;
+  }
+  #projects .item #three .buttons>a {
+    position: relative;
+    top: -90px;
+    left: 45px;
+    font-family: 'raleway-semi';
+  }
+  #projects .item #change .img::after {
+    height: 410px;
+  }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-links a::after {
+    transition: none;
+  }
+
+  .nav-links a:hover::after {
+    width: 0;
+    background: none;
+  }
+
+  #projects .item {
+    flex-direction: column;
+  }
+
+  #projects .item .left {
+    width: 100%;
+  }
+
+  #projects .item .right {
+    margin-left: 0;
+    width: 90%;
+    margin-top: -100px;
+  }
+
+  #projects .item:nth-of-type(even) {
+    flex-direction: column;
+  }
+
+  #projects .item:nth-of-type(even) .left {
+    margin-left: 0;
+  }
+
+  #projects .item #one .project-title {
+    position: relative;
+    top: 20px;
+    text-align: center;
+  }
+
+  #projects .item #one .project-sub-title {
+    position: relative;
+    top: 10px;
+    left: -25px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  #projects .item #one .project-desc {
+    position: relative;
+    top: 10px;
+    left: -25px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 25px;
+  }
+
+  #projects .item #two .project-title {
+    position: relative;
+    top: 35px;
+    text-align: center;
+  }
+
+  #projects .item #two .project-sub-title {
+    position: relative;
+    top: 20px;
+    left: 0px;
+    text-align: center;
+    font-size: 1.6rem
+  }
+
+  #projects .item #two .project-desc {
+    position: relative;
+    top: 10px;
+    left: -25px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 25px;
+  }
+
+  #projects .item #three .project-title {
+    position: relative;
+    top: 35px;
+    left: -30px;
+    text-align: center;
+  }
+
+  #projects .item #three .project-sub-title {
+    position: relative;
+    top: 20px;
+    left: -30px;
+    text-align: center;
+    font-size: 1.6rem
+  }
+
+  #projects .item #three .project-desc {
+    position: relative;
+    top: 10px;
+    left: -25px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 25px;
+  }
+
+  #projects .item .right .buttons>a {
+    position: relative;
+    top: 30px;
+    left: 50px;
+    font-family: 'raleway-semi';
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .nav-links a::after {
+    transition: none;
+  }
+
+  .nav-links a:hover::after {
+    width: 0;
+    background: none;
+  }
+
+  .navbar svg {
+    display: block;
+    position: relative;
+    left: 10px;
+  }
+
+  .navbar input {
+    display: none;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: -400px;
+    z-index: 10;
+    width: 200px;
+    height: 300px;
+    border-radius: 10%;
+    background: linear-gradient(to bottom, #151f32, #243a54);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.75s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .nav-links>li {
+    position: relative;
+    top: 40px;
+    left: -25px;
+  }
+
+  .open-sidebar-button,
+  .close-sidebar-button {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .open-sidebar-button {
+    display: block;
+  }
+
+  .close-sidebar-button {
+    display: none;
+  }
+
+  #sidebar-active:checked~.nav-links {
+    top: 90px;
+    right: 10px;
+  }
+
+  #sidebar-active:checked~.open-sidebar-button {
+    display: none;
+  }
+
+  #sidebar-active:checked~.close-sidebar-button {
+    display: block;
+  }
+
+  #projects>.container>.section-heading {
+    font-size: 2.3em;
+  }
+
+  #projects .item {
+    margin-left: 26px;
+  }
+
+  #projects .item .right .buttons {
+    flex-direction: column;
+  }
+
+  #projects .item .right .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  #projects .item .left .img img {
+    position: relative;
+    top: 35px;
+    object-fit: cover;
+    transition: none;
+    width: 350px;
+  }
+
+  #projects .item:hover .left .img img {
+    transform: none;
+    z-index: 0;
+  }
+
+  #projects .item {
+    position: relative;
+    left: -20px;
+  }
+
+  #projects .item .left>.img {
+    position: relative;
+  }
+
+  #projects .item .left .img {
+    height: 470px;
+    width: 430px;
+    overflow: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: none;
+    position: relative;
+  }
+
+  #projects .item .left .img::after {
+    background: none;
+  }
+
+  #projects .item #not .img::after {
+    background: none;
+  }
+
+  #projects .item #one {
+    position: relative;
+    bottom: 20px;
+    width: 430px;
+  }
+
+  #projects .item #one .project-title {
+    position: relative;
+    left: -40px;
+  }
+
+  #projects .item #two {
+    position: relative;
+    bottom: 60px;
+    width: 430px;
+  }
+
+  #projects .item #two .project-title {
+    position: relative;
+    left: -40px;
+  }
+
+  #projects .item #two .project-sub-title {
+    position: relative;
+    left: -20px;
+  }
+
+  #projects .item .right {
+    padding: 0 0;
+  }
+
+  #projects .right>.project-title {
+    width: 100%;
+  }
+
+  #projects .right>.project-sub-title {
+    display: none;
+  }
+
+  #projects .right>.show {
+    display: block;
+  }
+
+  #projects .item>.left>#change {
+    height: 400px;
+  }
+
+
+  #projects .item>#three {
+    position: relative;
+    top: 25px;
+    width: 400px;
+  }
+
+  #projects .item #three .project-title {
+    position: relative;
+    left: -40px;
+    top: 10px;
+  }
+
+  #projects .item #three .project-sub-title {
+    position: relative;
+    left: -20px;
+  }
+
+  #projects .item #three .project-desc {
+    position: relative;
+    left: -15px;
+  }
+
+  #projects .item .right .buttons>a {
+    position: relative;
+    top: -10px;
+    left: -20px;
+    font-family: 'raleway-semi';
+  }
+}
